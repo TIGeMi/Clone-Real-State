@@ -1,3 +1,5 @@
+$hover-color: #F58220;
+$primary-color: #005aa6;
 html {
     font-size: 62.5%;
     font-family: Arial, Helvetica, sans-serif;
@@ -24,7 +26,7 @@ body {
     background-color: white;
 }  
 .header {
-    padding-top: 15px;
+    padding-top: 20px;
     max-width: 1110px;
     margin: 0 auto;
     &__menu {
@@ -38,7 +40,7 @@ body {
         &-item {
             margin-left: 16px;
             font-size: 1.4rem;
-            color: #F58220;  
+            color: $hover-color;  
             &-phone {
                 font-family: Arial, Helvetica, sans-serif;
                 font-weight: bold;
@@ -52,25 +54,65 @@ body {
 
     }
     &__inner {
-        @include flex(flex-end, space-between)
+        @include flex(flex-end, space-between);
+        padding-bottom: 10px;
     }
     &__navbar {
-        padding-bottom: 10px;
         &-list {
-            @include flex(center)
+            @include flex(center);
+            position: relative;
         }
         &-item {
             margin-left: 3rem;
+            padding-bottom: 10px;
+            display: block;
+            &:hover .header__navbar-child {
+                visibility: visible;
+                opacity: 1;
+            }
+
         }
         &-link {
-            color: #005aa6;
+            color: $primary-color;
             font-size: 1.4rem;
             font-weight: bold;
             text-transform: uppercase;
+            &:hover {
+                color: $hover-color;
+            }
         }
         &-child {
             position: absolute;
+            background-color: $primary-color;
+            top: 34px;
+            word-wrap: normal;
+            border-radius: 3px;
             visibility: hidden;
+            opacity: 0;
+            transition: .25s linear;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                left: 20px;
+                width: 0; 
+                height: 0; 
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 8px solid $primary-color;
+            }
+            &-item{
+
+                &:hover {
+                    background-color: cornflowerblue;
+                }
+            }
+            &-link {
+                color: white;
+                font-size: 1.4rem;
+                display: block;
+                padding: 15px;
+            }
         }
     }
 }
