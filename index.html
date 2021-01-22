@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/index.css">
+    <script src="./assets/js/index.js"></script>
 
 </head>
 
 <body>
     <div class="wrapper">
         <!-- Header -->
-        <header class="header">
+        <header class="header wrapper__inner">
             <div class="header__lang">
                 <ul class="header__lang-list">
                     <li class="header__lang-item">
@@ -187,10 +188,43 @@
         </header>
 
 
+        <!-- Slideshow section -->
+        <div class="slideshow">
+            <div class="slideshow__item slideshow__item--fade">
+                <img src="./assets/img/slideshow1.png" alt="" class="slideshow__item-image">
+                <div class="slideshow__item-text">
+                    <h3 class="slideshow__item-text-heading">
+                        Lux garden
+                    </h3>
+                    <p class="slideshow__item-text-desc">
+                        Khu căn hộ cao cấp
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="slideshow__item slideshow__item--fade">
+                <img src="./assets/img/slideshow2.png" alt="" class="slideshow__item-image">
+                <div class="slideshow__item-text">Caption of slideshow image</div>
+            </div> -->
 
-        <div class="banner">
+            <!-- Next and previous button -->
+            <a class="slideshow__nav--prev" onclick="navSlideshow(-1)">&#10094;</a>
+            <a class="slideshow__nav--next" onclick="navSlideshow(1)">&#10095;</a>
 
+            <div class="slideshow__select">
+                <div class="slideshow__select-dot">
+                </div>
+                <div class="slideshow__select-dot">
+                </div>
+                <div class="slideshow__select-dot">
+                </div>
+                <div class="slideshow__select-dot">
+                </div>
+                <div class="slideshow__select-dot">
+                </div>
+            </div>
         </div>
+
+
         <div class="news">
 
         </div>
