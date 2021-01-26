@@ -11,23 +11,25 @@ a {
   text-decoration: none;
 }
 
-body {
-  background-color: gray;
-}
-
 .wrapper {
   width: 100%;
-  background-color: white;
   margin: 0 auto;
 }
 .wrapper__inner {
-  max-width: 1400px;
+  min-width: 1200px;
+  padding-left: 145px;
+  padding-right: 145px;
+  margin: 0 auto;
 }
 
 .header {
   padding-top: 20px;
-  max-width: 1110px;
-  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 2;
 }
 .header__lang-list {
   display: flex;
@@ -38,7 +40,7 @@ body {
 }
 .header__lang-item {
   margin-left: 16px;
-  font-size: 1.4rem;
+  font-size: 14px;
   color: #F58220;
 }
 .header__lang-item-phone {
@@ -116,6 +118,7 @@ body {
 }
 
 .slideshow {
+  margin-top: 115px;
   width: 100%;
   position: relative;
   background-color: #ccc;
@@ -256,6 +259,69 @@ body {
   to {
     opacity: 1;
   }
+}
+.news {
+  padding-top: 60px;
+  margin-bottom: 100px;
+  text-align: center;
+  position: relative;
+}
+.news::before {
+  content: "";
+  background-image: url("../img/news_background.png");
+  background-repeat: repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -1;
+}
+.news__heading {
+  font-size: 3.5rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #005aa6;
+  margin-bottom: 40px;
+}
+.news__list {
+  width: 100%;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.news__item {
+  width: 250px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 30px;
+}
+.news__item-image {
+  width: 100%;
+  height: 145px;
+  margin-bottom: 30px;
+}
+.news__item-heading {
+  font-size: 1.6rem;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #3c3c3c;
+  line-height: 1.4;
+  font-weight: 600;
+  transition: 0.2s linear;
+}
+.news__item-heading:hover {
+  color: #F58220;
+}
+.news__item-content {
+  font-size: 1.4rem;
+  text-align: justify;
+  color: #3c3c3c;
+  line-height: 1.4;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -11,7 +11,7 @@ a {
     text-decoration: none;
 }
 body {
-    background-color: gray;
+
 }
 @mixin flex($align: flex-start, $justify: flex-start, $direction: row, $wrap: nowrap) {
     display: flex;
@@ -22,16 +22,22 @@ body {
 }
 .wrapper {
     width: 100%;
-    background-color: white;
     margin: 0 auto;
     &__inner {
-        max-width: 1400px;
+        min-width: 1200px;
+        padding-left: 145px;
+        padding-right: 145px;
+        margin: 0 auto;
     }
 }  
 .header {
     padding-top: 20px;
-    max-width: 1110px;
-    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 2;
     &__menu {
 
     }
@@ -42,7 +48,7 @@ body {
         }
         &-item {
             margin-left: 16px;
-            font-size: 1.4rem;
+            font-size: 14px;
             color: $hover-color;  
             &-phone {
                 font-family: Arial, Helvetica, sans-serif;
@@ -122,6 +128,7 @@ body {
 }
 
 .slideshow {
+    margin-top: 115px;
     width: 100%;
     position: relative;
     background-color: #ccc;
@@ -263,5 +270,73 @@ body {
 @-moz-keyframes fadein {
     to {
         opacity:1;
+    }
+}
+
+
+.news {
+    padding-top: 60px;
+    margin-bottom: 100px;
+    text-align: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        background-image: url("../img/news_background.png");
+        background-repeat: repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        z-index: -1;
+    }
+    
+    &__heading {
+        font-size: 3.5rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        color: $primary-color;
+        
+        margin-bottom: 40px;
+    }
+    &__list {
+        width: 100%;
+        padding-bottom: 30px;
+       @include flex(flex-start, space-between,row, wrap)
+    }
+    &__item {
+        width: 250px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 30px;
+        &-link  {
+
+        }
+        &-image {
+            width: 100%;
+            height: 145px;
+            margin-bottom: 30px;
+        }
+        &-heading {
+            font-size: 1.6rem;
+            text-align: left;
+            margin-bottom: 20px;
+            color: #3c3c3c;
+            line-height: 1.4;
+            
+            font-weight: 600;
+            transition: .2s linear;
+            &:hover {
+                color: $hover-color;
+            }
+        }
+        &-content {
+            font-size: 1.4rem;
+            text-align: justify;
+            color: #3c3c3c;
+            line-height: 1.4;
+        }
     }
 }
